@@ -1,10 +1,190 @@
-fetch('mods.txt')
-    .then(response => response.text())
-    .then(mods =>
+const modList = `@Academia
+@ace
+@ace_complementos
+@ace_complementos_vn
+@ACE_KAT
+@acre2
+@acre2_compat_ffaa
+@acre2_compat_rhs_usaf
+@acre2_compat_SOG
+@adv_aceCPR
+@AIF_WW2
+@ALiVE
+@AlphaGroupEquipment
+@Breaching_charge
+@BRIDGE_Knocking
+@CBA_A3
+@coches
+@coches_SOF
+@cosas
+@cTab
+@CUP_Factions
+@CUP_Interiors
+@CUP_Terrains_ACE_Compat
+@CUP_Terrains_Core
+@CUP_Terrains_Maps
+@CUP_Units
+@CUP_Vehicles
+@CUP_Vehicles_ACE_compat
+@CUP_vehicles_coches_fix
+@CUP_Weapons
+@CUP_Weapons_ACE_compat
+@EODS
+@EODS_Sanchez
+@estructuras_sof
+@FA
+@FFAA
+@FFAA_BAM
+@FOW
+@Hatchet Framework - Stable Version
+@Hatchet H-60 pack - Stable Version
+@IFA3_ACE_Compat
+@IFA3_AIO
+@IFA3_FOW_Compat
+@JBAD
+@JBAD_fix
+@LAMBS
+@LYTHIUM_casas
+@MAP_Albasrah
+@MAP_Anizay
+@MAP_Archipelago
+@MAP_Bozoum
+@MAP_Clafghan
+@MAP_Elborma
+@MAP_FATA
+@MAP_Kujari
+@MAP_LYTHIUM
+@MAP_Majan
+@MAP_Mandol
+@MAP_North Takistan
+@MAP_Ruha
+@MAP_Sumava
+@MAP_Suursaari
+@MAP_TORA
+@MAP_Uzbin
+@MAP_Virolahti
+@MAP_YAPAL
+@MATV
+@Max_Women
+@MCN_Aliabad
+@Northern_Fronts_Terrains
+@Northern_Fronts_Units
+@ONU
+@Pack_Press
+@photo_cam
+@Quad6x6
+@RHSAFRF
+@RHSGREF
+@RHSSAF
+@RHSUSAF
+@RHSUSAF_ISOF
+@RUG_DSAI
+@S & S
+@S & S - New Wave
+@Second Assault
+@seleccion_sof
+@SimplexSS
+@sonidos
+@SQA
+@SQA_factions_AFGN
+@SQA_factions_RF
+@TANOA_CIV
+@UH60
+@VTN_TOYOTA
+@VTN_TOYOTA_CUPFAC
+@WARTAN
+@ZHC`;
+
+const mods = modList.split('\n');
+
+const modListElement = document.getElementById('modList');
+
+const numMods = mods.length;
+
+const numRows = Math.ceil(numMods / 6);
+
+
+for (let colIndex = 0; colIndex < 6; colIndex++)
+{
+    const colElement = document.createElement('div');
+    colElement.classList.add('col', 'mb-3');
+    modListElement.appendChild(colElement);
+
+    for (let rowIndex = 0; rowIndex < numRows; rowIndex++)
     {
-        console.log(mods);
-    })
-    .catch(error =>
+        const modIndex = colIndex * numRows + rowIndex;
+        if (modIndex >= numMods)
+        {
+            break;
+        }
+
+        const mod = mods[modIndex];
+        const modName = mod.replace('@', '');
+        const modItem = document.createElement('div');
+        modItem.classList.add('form-group');
+        modItem.innerHTML = `
+        <label class="mb-2">
+          <input type="checkbox" class="form-check-input" name="mod[]" value="${modName}">
+          ${mod}
+        </label>
+      `;
+
+        const checkbox = modItem.querySelector('input[type="checkbox"]');
+        checkbox.addEventListener('change', () =>
+        {
+            const numChecked = document.querySelectorAll('input[name="mod[]"]:checked').length;
+            const modCounter = document.getElementById('modCounter');
+            modCounter.textContent = `${numChecked} mod${numChecked !== 1 ? 's' : ''} selected`;
+        });
+
+        colElement.appendChild(modItem);
+    }
+}
+
+
+
+document.getElementById('presetFileInput').addEventListener('change', (event) =>
+{
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event) =>
     {
-        console.error('Failed to fetch mods.txt', error);
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(event.target.result, 'application/xml');
+        const modNodes = xml.querySelectorAll('tr[data-type="ModContainer"] td[data-type="DisplayName"]');
+        const modNames = Array.from(modNodes).map((node) => node.textContent);
+        const checkboxes = document.getElementsByName('mod[]');
+        checkboxes.forEach((checkbox) =>
+        {
+            if (modNames.includes(checkbox.value))
+            {
+                checkbox.checked = true;
+            }
+        });
+        const presetNameInput = document.getElementById('presetNameInput');
+        presetNameInput.value = file.name.endsWith('.html') ? file.name.slice(0, -5) : file.name;
     });
+
+    reader.readAsText(file);
+});
+
+
+const exportButton = document.getElementById('exportPresetButton');
+exportButton.addEventListener('click', () =>
+{
+    const selectedMods = Array.from(document.querySelectorAll('input[name="mod[]"]:checked')).map((checkbox) => checkbox.value);
+    const presetNameInput = document.getElementById('presetNameInput');
+    let presetName = presetNameInput.value.trim();
+    if (!presetName)
+    {
+        presetName = 'preset.html';
+    }
+    if (!presetName.endsWith('.html'))
+    {
+        presetName += '.html';
+    }
+    const xmlString = `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">@${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
+    const blob = new Blob([xmlString], { type: 'text/plain;charset=utf-8' });
+    saveAs(blob, presetName);
+});
