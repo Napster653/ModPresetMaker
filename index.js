@@ -1,4 +1,4 @@
-const modList = `@Academia
+const modListString = `@Academia
 @ace
 @ace_complementos
 @ace_complementos_vn
@@ -95,55 +95,59 @@ const modList = `@Academia
 @WARTAN
 @ZHC`;
 
-const mods = modList.split('\n');
-
-const modListElement = document.getElementById('modList');
-
-const numMods = mods.length;
-
-const numRows = Math.ceil(numMods / 6);
-
-
-for (let colIndex = 0; colIndex < 6; colIndex++)
+function createModListElement()
 {
-    const colElement = document.createElement('div');
-    colElement.classList.add('col', 'mb-3');
-    modListElement.appendChild(colElement);
+    const modList = modListString.split('\n');
+    const numMods = modList.length;
+    const numRows = Math.ceil(numMods / 6);
+    const modListElement = document.getElementById('modList');
 
-    for (let rowIndex = 0; rowIndex < numRows; rowIndex++)
+    for (let colIndex = 0; colIndex < 6; colIndex++)
     {
-        const modIndex = colIndex * numRows + rowIndex;
-        if (modIndex >= numMods)
-        {
-            break;
-        }
+        const colElement = document.createElement('div');
+        colElement.classList.add('col', 'mb-3');
+        modListElement.appendChild(colElement);
 
-        const mod = mods[modIndex];
-        const modName = mod.replace('@', '');
-        const modItem = document.createElement('div');
-        modItem.classList.add('form-group');
-        modItem.innerHTML = `
+        for (let rowIndex = 0; rowIndex < numRows; rowIndex++)
+        {
+            const modIndex = colIndex * numRows + rowIndex;
+            if (modIndex >= numMods)
+            {
+                break;
+            }
+            const mod = modList[modIndex];
+            const modName = mod.replace('@', '');
+            const modItem = createModItem(mod, modName);
+            colElement.appendChild(modItem);
+        }
+    }
+}
+
+function createModItem(mod, modName)
+{
+    const modItem = document.createElement('div');
+    modItem.classList.add('form-group');
+    modItem.innerHTML = `
         <label class="mb-2">
           <input type="checkbox" class="form-check-input" name="mod[]" value="${modName}">
           ${mod}
         </label>
-      `;
+    `;
 
-        const checkbox = modItem.querySelector('input[type="checkbox"]');
-        checkbox.addEventListener('change', () =>
-        {
-            const numChecked = document.querySelectorAll('input[name="mod[]"]:checked').length;
-            const modCounter = document.getElementById('modCounter');
-            modCounter.textContent = `${numChecked} mod${numChecked !== 1 ? 's' : ''} selected`;
-        });
+    const checkbox = modItem.querySelector('input[type="checkbox"]');
+    checkbox.addEventListener('change', updateModCounter);
 
-        colElement.appendChild(modItem);
-    }
+    return modItem;
 }
 
+function updateModCounter()
+{
+    const numChecked = document.querySelectorAll('input[name="mod[]"]:checked').length;
+    const modCounter = document.getElementById('modCounter');
+    modCounter.textContent = `${numChecked} mod${numChecked !== 1 ? 's' : ''} selected`;
+}
 
-
-document.getElementById('presetFileInput').addEventListener('change', (event) =>
+function handlePresetFileInputChange(event)
 {
     const file = event.target.files[0];
     const reader = new FileReader();
@@ -167,11 +171,9 @@ document.getElementById('presetFileInput').addEventListener('change', (event) =>
     });
 
     reader.readAsText(file);
-});
+}
 
-
-const exportButton = document.getElementById('exportPresetButton');
-exportButton.addEventListener('click', () =>
+function handleExportButtonClick()
 {
     const selectedMods = Array.from(document.querySelectorAll('input[name="mod[]"]:checked')).map((checkbox) => checkbox.value);
     const presetNameInput = document.getElementById('presetNameInput');
@@ -184,7 +186,22 @@ exportButton.addEventListener('click', () =>
     {
         presetName += '.html';
     }
-    const xmlString = `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">@${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
+    const xmlString = generateXMLString(selectedMods);
     const blob = new Blob([xmlString], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, presetName);
-});
+}
+
+function generateXMLString(selectedMods)
+{
+    return `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">@${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
+}
+
+// Initialize mod list
+createModListElement();
+
+// Event listeners
+document.getElementById('presetFileInput').addEventListener('change', handlePresetFileInputChange);
+document.getElementById('exportPresetButton').addEventListener('click', handleExportButtonClick);
+
+
+
