@@ -45,6 +45,7 @@ const modListString = `@Academia
 @JBAD_fix
 @LAMBS
 @LYTHIUM_casas
+@M224 60mm Mortar
 @MAP_Albasrah
 @MAP_Anizay
 @MAP_Archipelago
@@ -93,6 +94,8 @@ const modListString = `@Academia
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
 @WARTAN
+@Zeus Enhanced
+@Zeus Enhanced - ACE3 Compatibility
 @ZHC`;
 
 function createModListElement()
