@@ -132,8 +132,8 @@ function createModItem(mod, modName)
     modItem.classList.add('form-group');
     modItem.innerHTML = `
         <label class="mb-2">
-          <input type="checkbox" class="form-check-input" name="mod[]" value="${modName}">
-          ${mod}
+          <input type="checkbox" class="form-check-input" name="mod[]" value="${mod}">
+          ${modName}
         </label>
     `;
 
@@ -164,6 +164,7 @@ function handlePresetFileInputChange(event)
         const checkboxes = document.getElementsByName('mod[]');
         checkboxes.forEach((checkbox) =>
         {
+            checkbox.checked = false;
             if (modNames.includes(checkbox.value))
             {
                 checkbox.checked = true;
