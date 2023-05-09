@@ -80,8 +80,8 @@ const modListString = `@Academia
 @RHSUSAF
 @RHSUSAF_ISOF
 @RUG_DSAI
-@S & S
-@S & S - New Wave
+@S and S
+@S and S - New Wave
 @Second Assault
 @seleccion_sof
 @SimplexSS
@@ -98,7 +98,7 @@ const modListString = `@Academia
 @Zeus Enhanced - ACE3 Compatibility
 @ZHC`;
 
-function createModListElement()
+function createModList()
 {
     const modList = modListString.split('\n');
     const numMods = modList.length;
@@ -133,7 +133,7 @@ function createModItem(mod, modName)
     modItem.innerHTML = `
         <label class="mb-2">
           <input type="checkbox" class="form-check-input" name="mod[]" value="${mod}">
-          ${modName}
+          ${mod}
         </label>
     `;
 
@@ -165,15 +165,28 @@ function handlePresetFileInputChange(event)
         checkboxes.forEach((checkbox) =>
         {
             checkbox.checked = false;
-            if (modNames.includes(checkbox.value))
-            {
-                checkbox.checked = true;
-            }
         });
+        for (const modName of modNames)
+        {
+            var modFound = false;
+            for (const checkbox of checkboxes)
+            {
+                if (modName == checkbox.value)
+                {
+                    checkbox.checked = true;
+                    modFound = true;
+                    break;
+                }
+            }
+            if (!modFound)
+            {
+                console.error('Mod' + modName + 'could not be found in the list.')
+            }
+        }
         const presetNameInput = document.getElementById('presetNameInput');
         presetNameInput.value = file.name.endsWith('.html') ? file.name.slice(0, -5) : file.name;
     });
-
+    updateModCounter();
     reader.readAsText(file);
 }
 
@@ -197,11 +210,11 @@ function handleExportButtonClick()
 
 function generateXMLString(selectedMods)
 {
-    return `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">@${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
+    return `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
 }
 
 // Initialize mod list
-createModListElement();
+createModList();
 
 // Event listeners
 document.getElementById('presetFileInput').addEventListener('change', handlePresetFileInputChange);
