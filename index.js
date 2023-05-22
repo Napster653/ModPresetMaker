@@ -50,6 +50,7 @@ const modListString = `@Academia
 @MAP_Anizay
 @MAP_Archipelago
 @MAP_Bozoum
+@MAP_Chernarus2035
 @MAP_Clafghan
 @MAP_Elborma
 @MAP_FATA
