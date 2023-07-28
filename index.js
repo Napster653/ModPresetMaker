@@ -44,6 +44,8 @@ const modListString = `@Academia
 @JBAD
 @JBAD_fix
 @LAMBS
+@LAMBS_compat_CUP
+@LAMBS_compat_RHS
 @LYTHIUM_casas
 @M224 60mm Mortar
 @MAP_Albasrah
@@ -90,6 +92,7 @@ const modListString = `@Academia
 @SQA
 @SQA_factions_AFGN
 @SQA_factions_RF
+@SQA_USSR_60
 @TANOA_CIV
 @UH60
 @VTN_TOYOTA
@@ -109,7 +112,7 @@ function createModList()
     for (let colIndex = 0; colIndex < 6; colIndex++)
     {
         const colElement = document.createElement('div');
-        colElement.classList.add('col', 'mb-3');
+        colElement.classList.add('col');
         modListElement.appendChild(colElement);
 
         for (let rowIndex = 0; rowIndex < numRows; rowIndex++)
@@ -132,7 +135,7 @@ function createModItem(mod, modName)
     const modItem = document.createElement('div');
     modItem.classList.add('form-group');
     modItem.innerHTML = `
-        <label class="mb-2">
+        <label class="my-1">
           <input type="checkbox" class="form-check-input" name="mod[]" value="${mod}">
           ${mod}
         </label>
@@ -148,7 +151,7 @@ function updateModCounter()
 {
     const numChecked = document.querySelectorAll('input[name="mod[]"]:checked').length;
     const modCounter = document.getElementById('modCounter');
-    modCounter.textContent = `${numChecked} mod${numChecked !== 1 ? 's' : ''} selected`;
+    modCounter.textContent = `${numChecked} mod${numChecked !== 1 ? 's' : ''} seleccionados`;
 }
 
 function handlePresetFileInputChange(event)
@@ -186,8 +189,8 @@ function handlePresetFileInputChange(event)
         }
         const presetNameInput = document.getElementById('presetNameInput');
         presetNameInput.value = file.name.endsWith('.html') ? file.name.slice(0, -5) : file.name;
+        updateModCounter();
     });
-    updateModCounter();
     reader.readAsText(file);
 }
 
@@ -214,12 +217,34 @@ function generateXMLString(selectedMods)
     return `<table>\n${selectedMods.map((mod) => `  <tr data-type="ModContainer">\n    <td data-type="DisplayName">${mod}</td>\n  </tr>`).join('\n')}\n</table>`;
 }
 
+function markRequiredMods()
+{
+    modNames = ['@ace', '@ace_complementos', '@ACE_KAT', '@acre2', '@ALiVE', '@CBA_A3', '@LAMBS', '@Zeus Enhanced', '@Zeus Enhanced - ACE3 Compatibility'];
+    const checkboxes = document.getElementsByName('mod[]');
+    for (const modName of modNames)
+    {
+        var modFound = false;
+        for (const checkbox of checkboxes)
+        {
+            if (modName == checkbox.value)
+            {
+                checkbox.checked = true;
+                modFound = true;
+                break;
+            }
+        }
+        if (!modFound)
+        {
+            console.error('Mod' + modName + 'could not be found in the list.')
+        }
+    }
+    updateModCounter();
+}
+
 // Initialize mod list
 createModList();
 
 // Event listeners
 document.getElementById('presetFileInput').addEventListener('change', handlePresetFileInputChange);
 document.getElementById('exportPresetButton').addEventListener('click', handleExportButtonClick);
-
-
-
+document.getElementById('btn-marcar-mods-obligatorios').addEventListener('click', markRequiredMods);
