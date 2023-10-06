@@ -56,6 +56,7 @@ const modListString = `@Academia
 @MAP_Clafghan
 @MAP_Elborma
 @MAP_FATA
+@MAP_Korsac
 @MAP_Kujari
 @MAP_LYTHIUM
 @MAP_Majan
