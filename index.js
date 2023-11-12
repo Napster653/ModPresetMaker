@@ -72,6 +72,7 @@ const modListString = `@Academia
 @MATV
 @Max_Women
 @MCN_Aliabad
+@MH-47G
 @Northern_Fronts_Terrains
 @Northern_Fronts_Units
 @ONU
@@ -95,7 +96,6 @@ const modListString = `@Academia
 @SQA_factions_RF
 @SQA_USSR_60
 @TANOA_CIV
-@UH60
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
 @WARTAN
