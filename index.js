@@ -8,7 +8,6 @@ const modListString = `@Academia
 @acre2_compat_rhs_usaf
 @acre2_compat_SOG
 @adv_aceCPR
-@AIF_WW2
 @ALiVE
 @AlphaGroupEquipment
 @Breaching_charge
@@ -32,9 +31,6 @@ const modListString = `@Academia
 @EODS
 @EODS_Sanchez
 @estructuras_sof
-@FA
-@FFAA
-@FFAA_BAM
 @FOW
 @Hatchet Framework - Stable Version
 @Hatchet H-60 pack - Stable Version
@@ -75,7 +71,6 @@ const modListString = `@Academia
 @MH-47G
 @Northern_Fronts_Terrains
 @Northern_Fronts_Units
-@ONU
 @Pack_Press
 @photo_cam
 @Quad6x6
@@ -95,10 +90,9 @@ const modListString = `@Academia
 @SQA_factions_AFGN
 @SQA_factions_RF
 @SQA_USSR_60
-@TANOA_CIV
+@vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
-@WARTAN
 @Zeus Enhanced
 @Zeus Enhanced - ACE3 Compatibility
 @ZHC`;
