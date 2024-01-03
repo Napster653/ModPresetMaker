@@ -214,7 +214,7 @@ function generateXMLString(selectedMods)
 
 function markRequiredMods()
 {
-    modNames = ['@ace', '@ace_complementos', '@ACE_KAT', '@acre2', '@ALiVE', '@CBA_A3', '@LAMBS', '@Zeus Enhanced', '@Zeus Enhanced - ACE3 Compatibility'];
+    modNames = ['@ace', '@ace_complementos', '@ACE_KAT', '@acre2', '@ALiVE', '@CBA_A3', '@LAMBS', '@SQA', '@Zeus Enhanced', '@Zeus Enhanced - ACE3 Compatibility'];
     const checkboxes = document.getElementsByName('mod[]');
     for (const modName of modNames)
     {
