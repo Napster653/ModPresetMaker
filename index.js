@@ -45,6 +45,7 @@ const modListString = `@Academia
 @LYTHIUM_casas
 @M224 60mm Mortar
 @MAP_Albasrah
+@MAP_AliabadRegion
 @MAP_Anizay
 @MAP_Archipelago
 @MAP_Bozoum
@@ -52,6 +53,7 @@ const modListString = `@Academia
 @MAP_Clafghan
 @MAP_Elborma
 @MAP_FATA
+@MAP_Hazar-KotValley
 @MAP_Korsac
 @MAP_Kujari
 @MAP_LYTHIUM
@@ -67,7 +69,6 @@ const modListString = `@Academia
 @MAP_YAPAL
 @MATV
 @Max_Women
-@MCN_Aliabad
 @MH-47G
 @Northern_Fronts_Terrains
 @Northern_Fronts_Units
