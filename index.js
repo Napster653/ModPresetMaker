@@ -40,8 +40,7 @@ const modListString = `@Academia
 @JBAD
 @JBAD_fix
 @LAMBS
-@LAMBS_compat_CUP
-@LAMBS_compat_RHS
+@LAMBS_compat
 @LYTHIUM_casas
 @M224 60mm Mortar
 @MAP_Albasrah
