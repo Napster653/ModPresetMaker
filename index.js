@@ -66,8 +66,9 @@ const modListString = `@Academia
 @MAP_Uzbin
 @MAP_Virolahti
 @MAP_YAPAL
+@MAP_Sahatra
+@map_yulakia
 @MATV
-@Max_Women
 @MH-47G
 @Northern_Fronts_Terrains
 @Northern_Fronts_Units
@@ -90,6 +91,8 @@ const modListString = `@Academia
 @SQA_factions_AFGN
 @SQA_factions_RF
 @SQA_USSR_60
+@tklama_m119a3
+@tklama_mortars
 @vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
