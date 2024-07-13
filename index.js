@@ -6,7 +6,6 @@ const modListString = `@Academia
 @acre2
 @acre2_compat_ffaa
 @acre2_compat_rhs_usaf
-@acre2_compat_SOG
 @adv_aceCPR
 @ALiVE
 @AlphaGroupEquipment
