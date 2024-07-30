@@ -6,7 +6,7 @@ const modListString = `@Academia
 @acre2
 @acre2_compat_ffaa
 @acre2_compat_rhs_usaf
-@adv_aceCPR
+@AIF_WW2
 @ALiVE
 @AlphaGroupEquipment
 @Breaching_charge
@@ -18,22 +18,21 @@ const modListString = `@Academia
 @cTab
 @CUP_Factions
 @CUP_Interiors
-@CUP_Terrains_ACE_Compat
 @CUP_Terrains_Core
 @CUP_Terrains_Maps
 @CUP_Units
 @CUP_Vehicles
-@CUP_Vehicles_ACE_compat
 @CUP_vehicles_coches_fix
 @CUP_Weapons
-@CUP_Weapons_ACE_compat
 @EODS
 @EODS_Sanchez
 @estructuras_sof
+@FFAA
 @FOW
 @Hatchet Framework - Stable Version
 @Hatchet H-60 pack - Stable Version
 @IFA3_ACE_Compat
+@IFA3_ACRE_Compat
 @IFA3_AIO
 @IFA3_FOW_Compat
 @JBAD
@@ -47,30 +46,30 @@ const modListString = `@Academia
 @MAP_Anizay
 @MAP_Archipelago
 @MAP_Bozoum
+@MAP_Chernarus2020
 @MAP_Chernarus2035
 @MAP_Clafghan
-@MAP_Elborma
 @MAP_FATA
 @MAP_Hazar-KotValley
 @MAP_Korsac
 @MAP_Kujari
+@MAP_KunduzRiver
 @MAP_LYTHIUM
 @MAP_Majan
 @MAP_Mandol
+@MAP_NamalskR
 @MAP_North Takistan
 @MAP_Ruha
+@MAP_Sahatra
 @MAP_Sumava
 @MAP_Suursaari
 @MAP_TORA
 @MAP_Uzbin
 @MAP_Virolahti
-@MAP_YAPAL
-@MAP_Sahatra
 @map_yulakia
 @MATV
 @MH-47G
 @Northern_Fronts_Terrains
-@Northern_Fronts_Units
 @Pack_Press
 @photo_cam
 @Quad6x6
@@ -89,6 +88,7 @@ const modListString = `@Academia
 @SQA
 @SQA_factions_AFGN
 @SQA_factions_RF
+@sqa_factions_vn
 @SQA_USSR_60
 @tklama_m119a3
 @tklama_mortars
