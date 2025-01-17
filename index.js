@@ -1,11 +1,11 @@
-const modListString = `@Academia
+const modListString = `@A3TI REAP-IR
+@Academia
 @ace
 @ace_complementos
 @ace_complementos_vn
+@ace_complementos_ww2
 @ACE_KAT
 @acre2
-@acre2_compat_ffaa
-@acre2_compat_rhs_usaf
 @AIF_WW2
 @ALiVE
 @AlphaGroupEquipment
@@ -13,16 +13,17 @@ const modListString = `@Academia
 @BRIDGE_Knocking
 @CBA_A3
 @coches
+@coches_fix
 @coches_SOF
 @cosas
 @cTab
+@ctab_mobile
 @CUP_Factions
 @CUP_Interiors
 @CUP_Terrains_Core
 @CUP_Terrains_Maps
 @CUP_Units
 @CUP_Vehicles
-@CUP_vehicles_coches_fix
 @CUP_Weapons
 @EODS
 @EODS_Sanchez
@@ -37,8 +38,10 @@ const modListString = `@Academia
 @IFA3_FOW_Compat
 @JBAD
 @JBAD_fix
+@LAFS - Light AI Fire Support
 @LAMBS
 @LAMBS_compat
+@Leopard_2A6
 @LYTHIUM_casas
 @M224 60mm Mortar
 @MAP_Albasrah
@@ -72,6 +75,7 @@ const modListString = `@Academia
 @Northern_Fronts_Terrains
 @Pack_Press
 @photo_cam
+@PLA
 @Quad6x6
 @RHSAFRF
 @RHSGREF
@@ -85,8 +89,10 @@ const modListString = `@Academia
 @seleccion_sof
 @SimplexSS
 @sonidos
+@SPEX - Spearhead Extended
 @SQA
 @SQA_factions_AFGN
+@SQA_factions_dutch
 @SQA_factions_RF
 @sqa_factions_vn
 @SQA_USSR_60
@@ -95,9 +101,7 @@ const modListString = `@Academia
 @vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
-@Zeus Enhanced
-@Zeus Enhanced - ACE3 Compatibility
-@ZHC`;
+@Zeus Enhanced`;
 
 function createModList()
 {
