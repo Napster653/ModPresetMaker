@@ -1,3 +1,6 @@
+// Command to get the list of directories in the current folder:
+// PowerShell: Get-ChildItem -Directory | Select-Object Name
+
 const modListString = `@A3TI REAP-IR
 @Academia
 @ace
