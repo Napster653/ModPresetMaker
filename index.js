@@ -9,6 +9,7 @@ const modListString = `@A3TI REAP-IR
 @AIF_WW2
 @ALiVE
 @AlphaGroupEquipment
+@Antonov_An-2
 @Breaching_charge
 @BRIDGE_Knocking
 @CBA_A3
@@ -17,7 +18,6 @@ const modListString = `@A3TI REAP-IR
 @coches_SOF
 @cosas
 @cTab
-@ctab_mobile
 @CUP_Factions
 @CUP_Interiors
 @CUP_Terrains_Core
@@ -30,12 +30,12 @@ const modListString = `@A3TI REAP-IR
 @estructuras_sof
 @FFAA
 @FOW
+@FPV Drone Crocus
 @Hatchet Framework - Stable Version
 @Hatchet H-60 pack - Stable Version
 @IFA3_ACE_Compat
 @IFA3_ACRE_Compat
 @IFA3_AIO
-@IFA3_FOW_Compat
 @JBAD
 @JBAD_fix
 @LAFS - Light AI Fire Support
@@ -48,20 +48,23 @@ const modListString = `@A3TI REAP-IR
 @MAP_AliabadRegion
 @MAP_Anizay
 @MAP_Archipelago
+@MAP_Bastogne1944
 @MAP_Bozoum
 @MAP_Chernarus2020
 @MAP_Chernarus2035
 @MAP_Clafghan
 @MAP_FATA
 @MAP_Hazar-KotValley
+@MAP_HurtgenForest
 @MAP_Korsac
 @MAP_Kujari
 @MAP_KunduzRiver
 @MAP_LYTHIUM
 @MAP_Majan
 @MAP_Mandol
-@MAP_NamalskR
 @MAP_North Takistan
+@MAP_PegasusBridge
+@MAP_Prokhorovka1943
 @MAP_Ruha
 @MAP_Sahatra
 @MAP_Sumava
@@ -84,20 +87,29 @@ const modListString = `@A3TI REAP-IR
 @RHSUSAF_ISOF
 @RUG_DSAI
 @S and S
+@S and S - Marpat
 @S and S - New Wave
 @Second Assault
 @seleccion_sof
 @SimplexSS
 @sonidos
+@Speshal_Animate
+@Speshal_Breach
+@Speshal_Core
+@Speshal_Melee
 @SPEX - Spearhead Extended
 @SQA
 @SQA_factions_AFGN
-@SQA_factions_dutch
+@SQA_factions_cartel_mencey
 @SQA_factions_RF
 @sqa_factions_vn
+@SQA_UAV
+@SQA_UAV_nw
 @SQA_USSR_60
 @tklama_m119a3
 @tklama_mortars
+@ucm_utilities_construction_mod
+@us_general_equipment_and_accessories
 @vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
