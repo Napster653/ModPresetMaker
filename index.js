@@ -49,8 +49,6 @@ const modListString = `@A3TI REAP-IR
 @M224 60mm Mortar
 @MAP_Albasrah
 @MAP_AliabadRegion
-@MAP_Anizay
-@MAP_Archipelago
 @MAP_Bastogne1944
 @MAP_Bozoum
 @MAP_Chernarus2020
@@ -72,17 +70,13 @@ const modListString = `@A3TI REAP-IR
 @MAP_Sahatra
 @MAP_Sumava
 @MAP_Suursaari
-@MAP_TORA
 @MAP_Uzbin
 @MAP_Virolahti
 @map_yulakia
 @MATV
 @MH-47G
 @Northern_Fronts_Terrains
-@Pack_Press
-@photo_cam
 @PLA
-@Quad6x6
 @RHSAFRF
 @RHSGREF
 @RHSSAF
@@ -113,6 +107,8 @@ const modListString = `@A3TI REAP-IR
 @tklama_m119a3
 @tklama_mortars
 @ucm_utilities_construction_mod
+@USAF Mod - Main
+@USAF_AC130_BETA
 @us_general_equipment_and_accessories
 @vn
 @vn_extra
