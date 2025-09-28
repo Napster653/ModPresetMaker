@@ -88,6 +88,7 @@ const modListString = `@A3TI REAP-IR
 @S and S - New Wave
 @Second Assault
 @seleccion_sof
+@Simplex
 @SimplexSS
 @sonidos
 @Speshal_Animate
@@ -101,15 +102,17 @@ const modListString = `@A3TI REAP-IR
 @SQA_factions_cartel_mencey
 @SQA_factions_RF
 @sqa_factions_vn
+@SQA_lambs
+@SQA_lambs integration
 @SQA_UAV
 @SQA_UAV_nw
 @SQA_USSR_60
 @tklama_m119a3
 @tklama_mortars
 @ucm_utilities_construction_mod
+@us_general_equipment_and_accessories
 @USAF Mod - Main
 @USAF_AC130_BETA
-@us_general_equipment_and_accessories
 @vn
 @vn_extra
 @VTN_TOYOTA
