@@ -54,6 +54,7 @@ const modListString = `@A3TI REAP-IR
 @MAP_Chernarus2020
 @MAP_Chernarus2035
 @MAP_Clafghan
+@MAP_Duala
 @MAP_FATA
 @MAP_Hazar-KotValley
 @MAP_HurtgenForest
@@ -63,6 +64,7 @@ const modListString = `@A3TI REAP-IR
 @MAP_LYTHIUM
 @MAP_Majan
 @MAP_Mandol
+@MAP_Mutambara
 @MAP_North Takistan
 @MAP_PegasusBridge
 @MAP_Prokhorovka1943
@@ -72,7 +74,6 @@ const modListString = `@A3TI REAP-IR
 @MAP_Suursaari
 @MAP_Uzbin
 @MAP_Virolahti
-@map_yulakia
 @MATV
 @MH-47G
 @Northern_Fronts_Terrains
