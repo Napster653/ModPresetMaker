@@ -99,6 +99,7 @@ const modListString = `@A3TI REAP-IR
 @Speshal_Breach
 @Speshal_Core
 @Speshal_Melee
+@SPE
 @SPEX - Spearhead Extended
 @SQA
 @SQA_factions_AFGN
@@ -116,6 +117,7 @@ const modListString = `@A3TI REAP-IR
 @USAF Mod - Main
 @USAF_AC130_BETA
 @us_general_equipment_and_accessories
+@vn
 @vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
