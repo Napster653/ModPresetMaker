@@ -9,6 +9,7 @@ const modListString = `@A3TI REAP-IR
 @ace_complementos_ww2
 @ACE_KAT
 @acre2
+@ACV
 @AIF_WW2
 @ALiVE
 @AlphaGroupEquipment
@@ -25,6 +26,7 @@ const modListString = `@A3TI REAP-IR
 @CUP_Interiors
 @CUP_Terrains_Core
 @CUP_Terrains_Maps
+@CUP_Terrains_Maps2
 @CUP_Units
 @CUP_Vehicles
 @CUP_Weapons
@@ -45,13 +47,13 @@ const modListString = `@A3TI REAP-IR
 @LAMBS
 @LAMBS_compat
 @Leopard_2A6
+@LHA
 @LYTHIUM_casas
 @M224 60mm Mortar
 @MAP_Albasrah
 @MAP_AliabadRegion
 @MAP_Bastogne1944
 @MAP_Bozoum
-@MAP_Chernarus2020
 @MAP_Chernarus2035
 @MAP_Clafghan
 @MAP_Duala
@@ -83,6 +85,7 @@ const modListString = `@A3TI REAP-IR
 @RHSSAF
 @RHSUSAF
 @RHSUSAF_ISOF
+@RHS_acearmorfix
 @RUG_DSAI
 @S and S
 @S and S - Marpat
@@ -96,7 +99,6 @@ const modListString = `@A3TI REAP-IR
 @Speshal_Breach
 @Speshal_Core
 @Speshal_Melee
-@SPE
 @SPEX - Spearhead Extended
 @SQA
 @SQA_factions_AFGN
@@ -111,13 +113,13 @@ const modListString = `@A3TI REAP-IR
 @tklama_m119a3
 @tklama_mortars
 @ucm_utilities_construction_mod
-@us_general_equipment_and_accessories
 @USAF Mod - Main
 @USAF_AC130_BETA
-@vn
+@us_general_equipment_and_accessories
 @vn_extra
 @VTN_TOYOTA
 @VTN_TOYOTA_CUPFAC
+@WW2_Explosives
 @Zeus Enhanced`;
 
 function createModList()
